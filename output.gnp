@@ -1,0 +1,40 @@
+set terminal postscript color 'Times' 7
+#unset multiplot
+
+
+set out "fg.ps"
+#set pm3d
+#set cbrange [0.3:0.6]
+set multiplot
+ set size .33,.33
+ set origin 0,0
+ plot "data_0.dat" u 1:2:3 w image title "step 1"
+# plot "initial_str.dat" flipy rotation=45d u 1:2:3 w image title "initial_str"
+
+set origin 0.33,0
+ plot "data_1.dat" u 1:2:3 w image title "step 2" 
+
+set origin 0.66,0
+plot "data_2.dat" u 1:2:3 w image title "step 3"
+
+ set origin 0,.33
+ plot "data_3.dat" u 1:2:3 w image  title "step 4"
+
+set origin .33,0.33
+plot "data_4.dat" u 1:2:3 w image  title "step 5"
+
+set origin .66,0.33
+plot "data_5.dat" u 1:2:3 w image  title "step 6" 
+
+set origin .0,.66
+plot "data_6.dat" u 1:2:3 w image  title "step 7"
+
+set origin .33,.66
+plot "data_7.dat" u 1:2:3 w image title "step 8"
+
+set label "tot_time=12384*.005,exe time=52 mins" at screen 0.5,0.98 center front font 'times,10' 
+set origin .66,.66
+plot "data_8.dat" u 1:2:3 w image title "step 9"
+
+
+unset multiplot
